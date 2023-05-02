@@ -53,7 +53,7 @@ export const options = {
       display: true,
       text: "Payments per day",
       position: "left" as const,
-      align: "middle" as const,
+      align: "center" as const,
       color: "rgba(157, 157, 156, 1)",
     },
   },
