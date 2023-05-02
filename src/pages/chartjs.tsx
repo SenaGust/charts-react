@@ -30,6 +30,13 @@ export const options = {
   tension: 0.5,
   interaction: {
     mode: "index" as const,
+    intersect: false,
+  },
+  tooltip: {
+    intersect: true,
+  },
+  hover: {
+    intersect: false,
   },
   plugins: {
     legend: {
@@ -80,15 +87,23 @@ export const data = {
       label: "Current Period",
       data: values.map((data) => data["Current Period"]),
       borderColor: "rgba(255, 26, 255, 1)",
-      pointStyle: false as const,
       backgroundColor: "rgba(255,26,255,0.05)",
+
+      pointBorderColor: "rgba(0, 0, 0, 0)",
+      pointBackgroundColor: "rgba(0, 0, 0, 0)",
+      pointHoverBackgroundColor: "rgb(255, 99, 132)",
+      pointHoverBorderColor: "rgb(255, 99, 132)",
     },
     {
       label: "Previous Period",
       data: values.map((data) => data["Previous Period"]),
       borderColor: "rgba(255, 153, 255, 1)",
       borderDash: [5, 5],
-      pointStyle: false as const,
+
+      pointBorderColor: "rgba(0, 0, 0, 0)",
+      pointBackgroundColor: "rgba(0, 0, 0, 0)",
+      pointHoverBackgroundColor: "rgb(255, 99, 132)",
+      pointHoverBorderColor: "rgb(255, 99, 132)",
     },
   ],
 };
