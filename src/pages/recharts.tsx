@@ -11,51 +11,8 @@ import {
   ResponsiveContainer,
   Label,
 } from "recharts";
-
-const data = [
-  {
-    name: "Page A",
-    "Previous Period": 4000,
-    "Current Period": 2400,
-    day: "22/12",
-  },
-  {
-    name: "Page B",
-    "Previous Period": 3000,
-    "Current Period": 1398,
-    day: "23/12",
-  },
-  {
-    name: "Page C",
-    "Previous Period": 2000,
-    "Current Period": 9800,
-    day: "24/12",
-  },
-  {
-    name: "Page D",
-    "Previous Period": 2780,
-    "Current Period": 3908,
-    day: "25/12",
-  },
-  {
-    name: "Page E",
-    "Previous Period": 1890,
-    "Current Period": 4800,
-    day: "25/12",
-  },
-  {
-    name: "Page F",
-    "Previous Period": 2390,
-    "Current Period": 3800,
-    day: "25/12",
-  },
-  {
-    name: "Page G",
-    "Previous Period": 3490,
-    "Current Period": 4300,
-    day: "25/12",
-  },
-];
+import { data } from "@/data";
+import { tickFormatter } from "@/utils/tickFormatter";
 
 export default function Recharts() {
   const color = "rgba(255, 26, 255, 1)";
@@ -84,11 +41,7 @@ export default function Recharts() {
             tickMargin={10}
             tickSize={0}
             stroke="rgba(157, 157, 156, 1)"
-            tickFormatter={(tick) => {
-              if (tick >= 1000 && tick < 1000000) return tick / 1000 + "k";
-              else if (tick >= 1000000) return tick / 1000000 + "m";
-              else return tick;
-            }}
+            tickFormatter={(value) => tickFormatter(value) as string}
           >
             <Label
               value="Payments per day"
