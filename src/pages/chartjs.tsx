@@ -46,13 +46,15 @@ export const options = {
       labels: {
         boxHeight: 0,
         boxWidth: 41,
+        color: "rgba(157, 157, 156, 1)",
       },
     },
     title: {
       display: true,
       text: "Payments per day",
       position: "left" as const,
-      align: "center" as const,
+      align: "middle" as const,
+      color: "rgba(157, 157, 156, 1)",
     },
   },
   scales: {
@@ -63,6 +65,9 @@ export const options = {
       border: {
         display: false,
       },
+      ticks: {
+        color: "rgba(157, 157, 156, 1)",
+      },
     },
     y: {
       ticks: {
@@ -70,6 +75,7 @@ export const options = {
         padding: 10,
         count: 6,
         callback: tickFormatter,
+        color: "rgba(157, 157, 156, 1)",
       },
       border: {
         display: false,
