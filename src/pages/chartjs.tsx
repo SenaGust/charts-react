@@ -28,6 +28,7 @@ ChartJS.register(
 export const options = {
   responsive: true,
   tension: 0.5,
+  maintainAspectRatio: false,
   interaction: {
     mode: "index" as const,
     intersect: false,
@@ -109,5 +110,16 @@ export const data = {
 };
 
 export default function App() {
-  return <Line options={options} data={data} />;
+  return (
+    <div
+      style={{
+        width: "90vw",
+        height: "215px",
+        backgroundColor: "white",
+        paddingTop: 150,
+      }}
+    >
+      <Line options={options} data={data} />
+    </div>
+  );
 }
